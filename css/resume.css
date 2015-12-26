@@ -1,0 +1,133 @@
+
+/* --- common --- */
+hr {
+    margin-top: 30px;
+}
+
+/* --- header --- */
+section#header {
+    padding: 30px;
+}
+
+section#header, table {
+    background: gainsboro;
+}
+
+section#header h1, p {
+    margin-bottom: 0px;
+}
+
+section#header td.icon-mail-detail {
+    font-size: 22px;
+    padding-right: 5px;
+    vertical-align: middle;
+}
+
+/* --- work-experience --- */
+section#work-experience h5:before {
+    font-family: 'Pe-icon-7-stroke';
+    content: "\e673";
+    display: block;
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+section#work-experience h5 {
+    text-decoration: underline;
+}
+
+section#work-experience dl {
+    padding-left: 30px;
+}
+
+section#work-experience dt {
+    font-style: italic;
+}
+
+section#work-experience ul {
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+section#work-experience ul li:before {
+    font-family: 'Pe-icon-7-stroke';
+    content: "\e6a5";
+    display: block;
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+section#work-experience ul li {
+    list-style: none;
+}
+
+/* --- education --- */
+section#education dl dt:before {
+    font-family: 'Pe-icon-7-stroke';
+    content: "\e60f";
+    display: block;
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+    font-size: 20px;
+    font-style: normal;
+}
+
+section#education dl dt {
+    font-style: italic;
+}
+
+section#education dl dd {
+    padding-left: 30px;
+}
+
+/* --- skills --- */
+section#skills dl dt:before {
+    font-family: 'Pe-icon-7-stroke';
+    content: "\e650";
+    display: block;
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+section#skills dl dt {
+    text-decoration: underline;
+}
+
+section#skills dl dd {
+    padding-left: 30px;
+}
+
+
+/* --- publications --- */
+section#publications {
+    margin-bottom: 50px;
+}
+
+section#publications ul {
+    padding-left: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+
+section#publications ul li:before {
+    font-family: 'Pe-icon-7-stroke';
+    content: "\e62e";
+    display: block;
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+section#publications ul li {
+    list-style: none;
+}
+
