@@ -1,8 +1,16 @@
+/* --- global --- */
+h2 {
+	font-weight: bold;
+}
 
-/* --- common --- */
 hr {
     margin-top: 30px;
 }
+
+cite {
+	font-style: italic;
+}
+
 
 /* --- header --- */
 section#header {
@@ -22,6 +30,7 @@ section#header td.icon-mail-detail {
     padding-right: 5px;
     vertical-align: middle;
 }
+
 
 /* --- work-experience --- */
 section#work-experience h5:before {
@@ -43,7 +52,7 @@ section#work-experience dl {
 }
 
 section#work-experience dt {
-    font-style: italic;
+	font-weight: bold;
 }
 
 section#work-experience ul {
@@ -66,6 +75,7 @@ section#work-experience ul li {
     list-style: none;
 }
 
+
 /* --- education --- */
 section#education dl dt:before {
     font-family: 'Pe-icon-7-stroke';
@@ -79,12 +89,13 @@ section#education dl dt:before {
 }
 
 section#education dl dt {
-    font-style: italic;
+    font-weight: bold;
 }
 
 section#education dl dd {
     padding-left: 30px;
 }
+
 
 /* --- skills --- */
 section#skills dl dt:before {
@@ -98,7 +109,8 @@ section#skills dl dt:before {
 }
 
 section#skills dl dt {
-    text-decoration: underline;
+/*    text-decoration: underline;*/
+    font-weight: bold;
 }
 
 section#skills dl dd {
