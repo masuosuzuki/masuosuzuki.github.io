@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pe-icon-7-stroke アイコン一覧</title>
+    <style>
+        @font-face {
+            font-family: "Pe-icon-7-stroke";
+            src: url("Pe-icon-7-stroke.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        :root {
+            color-scheme: light;
+            --background: #f4f7f9;
+            --surface: #ffffff;
+            --text: #1c2a36;
+            --muted: #657581;
+            --line: #dce5eb;
+            --accent: #1976a3;
+            --accent-soft: #e6f4fa;
+            --shadow: 0 10px 30px rgba(36, 62, 79, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-width: 280px;
+            margin: 0;
+            color: var(--text);
+            background: var(--background);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.5;
+        }
+
+        .page-header {
+            padding: 52px 24px 42px;
+            color: #ffffff;
+            background:
+                radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.18), transparent 28%),
+                linear-gradient(135deg, #145a7a, #2389b8);
+        }
+
+        .page-header__inner,
+        main {
+            width: min(1180px, 100%);
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            line-height: 1.1;
+            letter-spacing: -0.035em;
+        }
+
+        .lead {
+            max-width: 720px;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 1rem;
+        }
+
+        main {
+            padding: 28px 24px 64px;
+        }
+
+        .toolbar {
+            position: sticky;
+            z-index: 10;
+            top: 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding: 14px;
+            border: 1px solid rgba(220, 229, 235, 0.88);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(12px);
+        }
+
+        .search {
+            flex: 1;
+            min-width: 0;
+            padding: 12px 14px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            color: var(--text);
+            background: #ffffff;
+            font: inherit;
+            outline: none;
+        }
+
+        .search:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(25, 118, 163, 0.14);
+        }
+
+        .count {
+            flex: 0 0 auto;
+            min-width: 7em;
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(8, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .icon-card {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: var(--surface);
+            box-shadow: 0 4px 16px rgba(36, 62, 79, 0.045);
+            transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+        }
+
+        .icon-card:hover {
+            border-color: #b9cbd6;
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+
+        .icon-preview {
+            display: grid;
+            min-height: 82px;
+            place-items: center;
+            color: var(--accent);
+            background: linear-gradient(145deg, #fafeff, var(--accent-soft));
+            font-family: "Pe-icon-7-stroke";
+            font-size: 2.6rem;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1;
+            speak: never;
+        }
+
+        .icon-info {
+            padding: 10px;
+        }
+
+        .icon-name {
+            overflow: hidden;
+            margin: 0 0 8px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .codes {
+            display: grid;
+            gap: 6px;
+        }
+
+        .copy-code {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+            padding: 5px 6px;
+            border: 0;
+            border-radius: 7px;
+            color: #314653;
+            background: #f3f6f8;
+            font: 0.68rem/1.35 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            text-align: left;
+            cursor: copy;
+        }
+
+        .copy-code:hover,
+        .copy-code:focus-visible {
+            color: #0f638b;
+            background: var(--accent-soft);
+            outline: none;
+        }
+
+        .code-label {
+            color: var(--muted);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 0.58rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .empty-state {
+            display: none;
+            padding: 64px 20px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .empty-state.is-visible {
+            display: block;
+        }
+
+        .toast {
+            position: fixed;
+            z-index: 20;
+            right: 20px;
+            bottom: 20px;
+            max-width: calc(100% - 40px);
+            padding: 11px 16px;
+            border-radius: 9px;
+            color: #ffffff;
+            background: #18394a;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: opacity 150ms ease, transform 150ms ease;
+        }
+
+        .toast.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 960px) {
+            .icon-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 560px) {
+            .page-header {
+                padding: 38px 20px 34px;
+            }
+
+            main {
+                padding: 20px 14px 48px;
+            }
+
+            .toolbar {
+                align-items: stretch;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .count {
+                min-width: auto;
+                padding: 0 2px;
+                text-align: left;
+            }
+
+            .icon-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="page-header__inner">
+            <h1>Pe-icon-7-stroke</h1>
+            <p class="lead">
+                TTFに収録された全202アイコンのコード一覧です。各コードをクリックするとクリップボードにコピーできます。
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <div class="toolbar" role="search">
+            <input
+                id="search"
+                class="search"
+                type="search"
+                placeholder="名前やコードで検索（例: mail, e639）"
+                aria-label="アイコンを検索"
+                autocomplete="off"
+            >
+            <p id="count" class="count" aria-live="polite"></p>
+        </div>
+
+        <div id="icon-grid" class="icon-grid"></div>
+        <p id="empty-state" class="empty-state">該当するアイコンはありません。</p>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script>
+        const iconNames = `
+            wallet volume2 volume1 voicemail video user upload unlock umbrella trash
+            tools timer ticket target sun study stopwatch star speaker signal shuffle
+            shopbag share server search science ribbon repeat refresh refresh-cloud radio
+            print prev power portfolio plus play plane photo-gallery phone pen paper-plane
+            paint notebook note next news-paper musiclist music mouse more moon monitor micro
+            menu map map-marker mail mail-open mail-open-file magnet loop look lock lintern link
+            like light less keypad junk info home help2 help1 graph3 graph2 graph1 graph global
+            gleam glasses gift folder flag filter file expand1 exapnd2 edit drop drawer download
+            display2 display1 diskette date cup culture crop credit copy-file config compass
+            comment coffee cloud clock check chat cart camera call calculator browser box2 box1
+            bookmarks bicycle bell battery ball back attention anchor albums alarm airplay close
+            close-circle angle-up angle-up-circle angle-right angle-right-circle angle-left
+            angle-left-circle angle-down angle-down-circle cloud-upload cloud-download cash
+            bluetooth way id wristwatch world volume users user-female up-arrow switch scissors
+            safe right-arrow plug pin paperclip note2 network mute medal like2 left-arrow key joy
+            film disk delete-user bottom-arrow add-user album arc back-2 bandaid car diamond
+            door-lock eyedropper female gym hammer headphones helm hourglass leaf magic-wand male
+            map-2 next-2 paint-bucket pendrive photo piggy plugin refresh-2 rocket settings shield
+            smile usb vector wine
+        `.trim().split(/\s+/);
+
+        const icons = iconNames.map((name, index) => {
+            const code = 0xe600 + index;
+            const hex = code.toString(16);
+
+            return {
+                name,
+                code,
+                css: `\\${hex}`,
+                entity: `&#x${hex};`,
+                unicode: `U+${hex.toUpperCase()}`
+            };
+        });
+
+        const grid = document.querySelector("#icon-grid");
+        const search = document.querySelector("#search");
+        const count = document.querySelector("#count");
+        const emptyState = document.querySelector("#empty-state");
+        const toast = document.querySelector("#toast");
+        let toastTimer;
+
+        function makeCodeButton(label, value) {
+            const button = document.createElement("button");
+            const code = document.createElement("span");
+            const codeLabel = document.createElement("span");
+
+            button.className = "copy-code";
+            button.type = "button";
+            button.dataset.copy = value;
+            button.title = `${value} をコピー`;
+
+            code.textContent = value;
+            codeLabel.className = "code-label";
+            codeLabel.textContent = label;
+
+            button.append(code, codeLabel);
+            return button;
+        }
+
+        function makeCard(icon) {
+            const card = document.createElement("article");
+            const preview = document.createElement("div");
+            const info = document.createElement("div");
+            const name = document.createElement("h2");
+            const codes = document.createElement("div");
+
+            card.className = "icon-card";
+            card.dataset.search = `${icon.name} icon-${icon.name} ${icon.css} ${icon.entity} ${icon.unicode}`.toLowerCase();
+
+            preview.className = "icon-preview";
+            preview.textContent = String.fromCodePoint(icon.code);
+            preview.setAttribute("aria-hidden", "true");
+
+            info.className = "icon-info";
+            name.className = "icon-name";
+            name.textContent = `.icon-${icon.name}`;
+            name.title = `.icon-${icon.name}`;
+
+            codes.className = "codes";
+            codes.append(
+                makeCodeButton("CSS", icon.css),
+                makeCodeButton("HTML", icon.entity),
+                makeCodeButton("Unicode", icon.unicode)
+            );
+            info.append(name, codes);
+            card.append(preview, info);
+
+            return card;
+        }
+
+        function render(query = "") {
+            const normalizedQuery = query.trim().toLowerCase();
+            const fragment = document.createDocumentFragment();
+            const filteredIcons = icons.filter((icon) => {
+                const haystack = `${icon.name} icon-${icon.name} ${icon.css} ${icon.entity} ${icon.unicode}`.toLowerCase();
+                return haystack.includes(normalizedQuery);
+            });
+
+            filteredIcons.forEach((icon) => fragment.append(makeCard(icon)));
+            grid.replaceChildren(fragment);
+            count.textContent = `${filteredIcons.length} / ${icons.length} icons`;
+            emptyState.classList.toggle("is-visible", filteredIcons.length === 0);
+        }
+
+        async function copyText(value) {
+            try {
+                await navigator.clipboard.writeText(value);
+            } catch (error) {
+                const textarea = document.createElement("textarea");
+                textarea.value = value;
+                textarea.style.position = "fixed";
+                textarea.style.opacity = "0";
+                document.body.append(textarea);
+                textarea.select();
+                document.execCommand("copy");
+                textarea.remove();
+            }
+
+            toast.textContent = `${value} をコピーしました`;
+            toast.classList.add("is-visible");
+            window.clearTimeout(toastTimer);
+            toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 1500);
+        }
+
+        search.addEventListener("input", (event) => render(event.currentTarget.value));
+        grid.addEventListener("click", (event) => {
+            const button = event.target.closest("[data-copy]");
+            if (button) {
+                copyText(button.dataset.copy);
+            }
+        });
+
+        render();
+    </script>
+</body>
+</html>
