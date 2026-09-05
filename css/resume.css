@@ -120,7 +120,7 @@ section#skills dl dd {
 
 /* --- publications --- */
 section#publications {
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 
 section#publications ul {
@@ -139,7 +139,22 @@ section#publications ul li:before {
     font-size: 20px;
 }
 
+section#publications ul li.presentation:before {
+    content: "\e65d";
+}
+
 section#publications ul li {
     list-style: none;
 }
 
+section#publications a.publication-link {
+    color: #245b82;
+    font-size: 20px;
+    vertical-align: -3px;
+    -webkit-text-stroke: 0.4px currentColor;
+}
+
+section#publications a.publication-link:hover,
+section#publications a.publication-link:focus {
+    color: #123e5e;
+}
